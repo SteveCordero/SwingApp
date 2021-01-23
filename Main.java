@@ -9,14 +9,19 @@ public class Main
     JFrame frame1 = new JFrame("hello there");
     frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame1.setSize(500,500);
-    
-    JPanel panel1 = new JPanel(new GridLayout(2,2,20,20));
+//-----------------------Panel1------------------------
+    JPanel panel1 = new JPanel(new GridLayout(1,3,20,20));
 
+//----------------------Panel2--------------------------
+    JPanel panel2 = new JPanel(new BorderLayout(10,10));
 
+//----------------------Label1------------------------------
     JLabel label1 = new JLabel("Hello There");
     JTextField textfield1 = new JTextField(10);
 
-
+//---------------------Label2--------------------------------
+    JLabel label2 = new JLabel("heheh");
+    
 //---------------------Button1-------------------------------
     JButton button1 = new JButton("This is button1");
 
@@ -53,7 +58,10 @@ public class Main
     panel1.add(button1);
     panel1.add(button2);
     panel1.add(button3);
-    frame1.getContentPane().add(panel1);
+    panel2.add(label2);
+    frame1.getContentPane().add(BorderLayout.NORTH, panel1);
+    frame1.getContentPane().add(BorderLayout.CENTER, panel2);
+
     frame1.setVisible(true);
   }//end main method
 }//end class Main
