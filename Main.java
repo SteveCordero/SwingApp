@@ -6,7 +6,7 @@ public class Main
 {
   public static void main(String args[])
   {
-    JFrame frame1 = new JFrame("hello there");
+    JFrame frame1 = new JFrame("Positive Cow");
     frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame1.setSize(500,500);
 //-----------------------Panel1------------------------
@@ -14,6 +14,9 @@ public class Main
 
 //----------------------Panel2--------------------------
     JPanel panel2 = new JPanel(new BorderLayout(10,10));
+
+//----------------------Panel3---------------------------
+    JPanel panel3 = new JPanel(new GridLayout(1,1,20,20));
 
 //----------------------Label1------------------------------
     JLabel label1 = new JLabel("Hello There");
@@ -34,7 +37,7 @@ public class Main
     });//end the ActionListener for Button1
 
 //---------------------------Button2------------------------
-    JButton button2 = new JButton("This is button1");
+    JButton button2 = new JButton("This is button2");
 
     button2.addActionListener(new ActionListener()
     {
@@ -62,10 +65,11 @@ public class Main
     panel1.add(button1);
     panel1.add(button2);
     panel1.add(button3);
-    panel2.add(label2);
     panel2.add(cowLabelPic);
+    panel3.add(label2);
     frame1.getContentPane().add(BorderLayout.NORTH, panel1);
     frame1.getContentPane().add(BorderLayout.CENTER, panel2);
+    frame1.getContentPane().add(BorderLayout.SOUTH, panel3);
 
     frame1.setVisible(true);
   }//end main method
