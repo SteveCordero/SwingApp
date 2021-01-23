@@ -31,7 +31,7 @@ public class Main
 //---------------------------Button2------------------------
     JButton button2 = new JButton("This is button1");
 
-    button1.addActionListener(new ActionListener()
+    button2.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {
@@ -40,13 +40,19 @@ public class Main
     });//end the ActionListener for Button2
 
 //-----------------------Button3----------------------------
+    JButton button3 = new JButton("This is button3");
 
-
-
-
+    button3.addActionListener(new ActionListener()
+    {
+      public void actionPerformed(ActionEvent e)
+      {
+        System.out.println("hello there buddy3");
+      }//end block for function of Button3
+    });//end the ActionListener for Button3
 
     panel1.add(button1);
     panel1.add(button2);
+    panel1.add(button3);
     frame1.getContentPane().add(panel1);
     frame1.setVisible(true);
   }//end main method
