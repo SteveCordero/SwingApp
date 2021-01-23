@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
+import java.util.*;
 
 public class Main
 {
@@ -14,6 +15,7 @@ public class Main
     names.add("Daisy");
     names.add("Sugar");
     names.add("Cocoa");
+    names.add("Julie");
 
 //-----------------------Panel1------------------------
     JPanel panel1 = new JPanel(new GridLayout(3,2,20,20));
@@ -39,7 +41,10 @@ public class Main
     {
       public void actionPerformed(ActionEvent e)
       {
-        System.out.println("hello there buddy");
+        String tempName = textfield1.getText();
+        names.add(tempName);
+        label1.setText("Current Name: " + tempName);
+        textfield1.setText("");
       }//end block for function of Button1
     });//end the ActionListener for Button1
 
@@ -50,8 +55,8 @@ public class Main
     {
       public void actionPerformed(ActionEvent e)
       {
-        String tempName = textfield2.getText();
-        label2.setText("Current Emotion: " + tempName);
+        String tempEmotion = textfield2.getText();
+        label2.setText("Current Emotion: " + tempEmotion);
         textfield2.setText("");
       }//end block for function of Button2
     });//end the ActionListener for Button2
