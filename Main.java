@@ -55,10 +55,15 @@ public class Main
       }//end block for function of Button3
     });//end the ActionListener for Button3
 
+//------------------------Image1- CuteCow ----------------------
+    ImageIcon cow = new ImageIcon("cutecow.jpg", "amazing cutie cow");
+    JLabel cowLabelPic = new JLabel(cow);
+
     panel1.add(button1);
     panel1.add(button2);
     panel1.add(button3);
     panel2.add(label2);
+    panel2.add(cowLabelPic);
     frame1.getContentPane().add(BorderLayout.NORTH, panel1);
     frame1.getContentPane().add(BorderLayout.CENTER, panel2);
 
