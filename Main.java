@@ -68,7 +68,8 @@ public class Main
     {
       public void actionPerformed(ActionEvent e)
       {
-        System.out.println("hello there buddy3");
+        String tempName2 = names.get((int)(Math.random() * names.size()));
+        label1.setText("Current Name: " + tempName2);
       }//end block for function of Button3
     });//end the ActionListener for Button3
 
