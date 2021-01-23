@@ -6,27 +6,34 @@ public class Main
 {
   public static void main(String args[])
   {
-    JFrame frame1 = new JFrame("Positive Cow");
+    JFrame frame1 = new JFrame("Emotional Cow");
     frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame1.setSize(500,500);
+    ArrayList<String> names = new ArrayList<>();
+    names.add("Buster");
+    names.add("Daisy");
+    names.add("Sugar");
+    names.add("Cocoa");
+
 //-----------------------Panel1------------------------
-    JPanel panel1 = new JPanel(new GridLayout(1,3,20,20));
+    JPanel panel1 = new JPanel(new GridLayout(3,2,20,20));
 
 //----------------------Panel2--------------------------
-    JPanel panel2 = new JPanel(new BorderLayout(10,10));
+    JPanel panel2 = new JPanel(new GridLayout(1,1,20,20));
 
 //----------------------Panel3---------------------------
-    JPanel panel3 = new JPanel(new GridLayout(1,1,20,20));
+    JPanel panel3 = new JPanel(new BorderLayout(10,10));
 
-//----------------------Label1------------------------------
-    JLabel label1 = new JLabel("Hello There");
+//----------------------Label1----------------------------
+    JLabel label1 = new JLabel("Current Name: Julie");
     JTextField textfield1 = new JTextField(10);
 
-//---------------------Label2--------------------------------
-    JLabel label2 = new JLabel("heheh");
-    
-//---------------------Button1-------------------------------
-    JButton button1 = new JButton("This is button1");
+//---------------------Label2------------------------------
+    JLabel label2 = new JLabel("Current Emotion: Happy");
+    JTextField textfield2 = new JTextField(10);
+
+//---------------------Button1-----------------------------
+    JButton button1 = new JButton("Add Name:");
 
     button1.addActionListener(new ActionListener()
     {
@@ -36,19 +43,21 @@ public class Main
       }//end block for function of Button1
     });//end the ActionListener for Button1
 
-//---------------------------Button2------------------------
-    JButton button2 = new JButton("This is button2");
+//-------------------------Button2------------------------
+    JButton button2 = new JButton("New Emotion:");
 
     button2.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {
-        System.out.println("hello there buddy2");
+        String tempName = textfield2.getText();
+        label2.setText("Current Emotion: " + tempName);
+        textfield2.setText("");
       }//end block for function of Button2
     });//end the ActionListener for Button2
 
 //-----------------------Button3----------------------------
-    JButton button3 = new JButton("This is button3");
+    JButton button3 = new JButton("Random Name");
 
     button3.addActionListener(new ActionListener()
     {
@@ -64,9 +73,13 @@ public class Main
 
     panel1.add(button1);
     panel1.add(button2);
+    panel1.add(textfield1);
+    panel1.add(textfield2);
     panel1.add(button3);
-    panel2.add(cowLabelPic);
-    panel3.add(label2);
+    panel2.add(label1);
+    panel2.add(label2);
+    panel3.add(cowLabelPic);
+    
     frame1.getContentPane().add(BorderLayout.NORTH, panel1);
     frame1.getContentPane().add(BorderLayout.CENTER, panel2);
     frame1.getContentPane().add(BorderLayout.SOUTH, panel3);
